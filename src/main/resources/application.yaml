@@ -1,3 +1,31 @@
 spring:
   application:
     name: E-commerce
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecommerce_db
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        "[format_sql]": true
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1/
+
+logging:
+ level:
+    "[org.springframework]": INFO
+
+security:
+  jwt:
+    secret-key: Xk+MxE2K3kcMQj/Zx11e9J79+GSPblPEXblnxquTqyu15gftjOdcZ5jmB848cxIEjuijtm+6xKfcqrbTBqQK9w==
+    token-expiration: 600000
